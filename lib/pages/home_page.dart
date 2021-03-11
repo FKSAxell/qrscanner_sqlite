@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qrscanner_sqlite/pages/direcciones_page.dart';
-import 'package:qrscanner_sqlite/providers/db_provider.dart';
 import 'package:qrscanner_sqlite/providers/ui_provider.dart';
 import 'package:qrscanner_sqlite/widgets/custom_navigatorbar.dart';
 import 'package:qrscanner_sqlite/widgets/scan_button.dart';
@@ -22,6 +21,7 @@ class HomePage extends StatelessWidget {
 
       
       bottomNavigationBar:CustomNavigationBar(),
+      
       floatingActionButton: ScanButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, 
       
@@ -45,7 +45,7 @@ class _HomePageBody extends StatelessWidget {
     // DBProvider.db.getTodosLosScans().then((value) => print(value));
     // DBProvider.db.getScansPorTipo('geo').then((value) => print(value));
     // DBProvider.db.deleteAllScans().then(print); //cantidad de registros borrados
-
+    
     switch (currentIndex) {
       case 0 :
         return MapasPage();
