@@ -6,6 +6,6 @@ class MapaPage extends StatelessWidget {
       body: Center(
         child: Text("Mapa page"),
       )
-    )
+    );
   }
 }
