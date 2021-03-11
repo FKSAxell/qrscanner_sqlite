@@ -29,7 +29,7 @@ class DBProvider{
 
     // 123131312-312312321-31231321/ path raro
     final path = join(documentDirectory.path,'ScansDB.db');
-    print(path);
+    // print(path);
 
     return await openDatabase(
       path,

@@ -15,7 +15,7 @@ class ScanButton extends StatelessWidget {
         final barcodeScanRes = 'https://fernando-herrera2.com';                              
         
         final scanListProvider = Provider.of<ScanListProvider>(context,listen: false);
-        // scanListProvider.nuevoScan(barcodeScanRes);
+        scanListProvider.nuevoScan(barcodeScanRes);
         scanListProvider.nuevoScan('geo:15.3,13.5');
 
       }
