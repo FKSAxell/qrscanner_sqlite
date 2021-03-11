@@ -7,7 +7,7 @@ class ScanListProvider extends ChangeNotifier{
   List<ScanModel> scans=[];
   String tipoSelecionado="http";
 
-  nuevoScan(String valor) async {
+  Future<ScanModel> nuevoScan(String valor) async {
 
     final nuevoScan = new ScanModel(valor: valor);
     final id = await DBProvider.db.nuevoScan(nuevoScan);
@@ -17,6 +17,7 @@ class ScanListProvider extends ChangeNotifier{
       scans.add(nuevoScan);
       notifyListeners(); //notificar a los widgets que deben ser redibujado
     }
+    return nuevoScan;
 
   }
 
