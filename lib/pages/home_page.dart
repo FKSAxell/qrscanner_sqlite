@@ -44,6 +44,7 @@ class _HomePageBody extends StatelessWidget {
     // DBProvider.db.getScanById(7).then((scan) => print(scan.valor));
     // DBProvider.db.getTodosLosScans().then((value) => print(value));
     // DBProvider.db.getScansPorTipo('geo').then((value) => print(value));
+    // DBProvider.db.deleteAllScans().then(print); //cantidad de registros borrados
 
     switch (currentIndex) {
       case 0 :
