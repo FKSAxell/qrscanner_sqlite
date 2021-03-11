@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qrscanner_sqlite/pages/direcciones_page.dart';
+import 'package:qrscanner_sqlite/providers/scan_list_provider.dart';
 import 'package:qrscanner_sqlite/providers/ui_provider.dart';
 import 'package:qrscanner_sqlite/widgets/custom_navigatorbar.dart';
 import 'package:qrscanner_sqlite/widgets/scan_button.dart';
@@ -46,10 +47,16 @@ class _HomePageBody extends StatelessWidget {
     // DBProvider.db.getScansPorTipo('geo').then((value) => print(value));
     // DBProvider.db.deleteAllScans().then(print); //cantidad de registros borrados
     
+
+
+    // usar el scanlist provider
+    final scanListProvider = Provider.of<ScanListProvider>(context,listen: false);
     switch (currentIndex) {
       case 0 :
+        scanListProvider.cargarScanPorTipo('geo');
         return MapasPage();
       case 1 :
+        scanListProvider.cargarScanPorTipo('http');
         return DireccionesPage();   
       default:
         return MapasPage();
