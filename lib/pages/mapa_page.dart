@@ -26,8 +26,16 @@ class _MapaPageState extends State<MapaPage> {
     final CameraPosition _kGooglePlex = CameraPosition(
       target: scan.getLatLng(),
       zoom: 17,
-      tilt: 50,
+      tilt: 70,
     );
+
+    //Marcadores
+    Set<Marker> markers = new Set<Marker>();
+    markers.add(new Marker(
+      markerId: MarkerId("geo-location"),
+      position: scan.getLatLng()
+    ));
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Mapa'),
@@ -40,6 +48,8 @@ class _MapaPageState extends State<MapaPage> {
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
+
+        markers: markers ,
       ),
     );
   }
